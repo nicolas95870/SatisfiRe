@@ -39,3 +39,14 @@ usethis::use_github_action("test-coverage")
 usethis::use_github_action("pkgdown")
 roxygen2::roxygenise()
 usethis::use_readme_rmd()
+usethis::use_coverage()
+usethis::use_github_action("test-coverage")
+
+pkgbuild::build(vignettes = TRUE)
+
+
+# Donuts NPS
+
+usethis::use_vignette("NPS_dognuts")
+usethis::use_r("NPS_dognuts.R")
+

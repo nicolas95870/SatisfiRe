@@ -3,3 +3,5 @@
 ^dev_history\.R$
 ^LICENSE\.md$
 ^\.gitlab-ci\.yml$
+^\.travis\.yml$
+^\.github$

@@ -27,3 +27,6 @@ devtools::test()
 
 attachment::att_amend_desc()
 devtools::check()
+
+
+usethis::use_github_action_check_standard()

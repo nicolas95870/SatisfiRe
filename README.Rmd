@@ -52,7 +52,7 @@ NPS(c(1,10,2,3,5,2))
 
 ## Display NPS
 
-```{r}
+```{r eval = FALSE}
 NPS_Dognuts(c(1,2,10,4,3,6,7,8))
 ```
 

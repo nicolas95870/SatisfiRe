@@ -49,4 +49,10 @@ pkgbuild::build(vignettes = TRUE)
 
 usethis::use_vignette("NPS_dognuts")
 usethis::use_r("NPS_dognuts.R")
+usethis::use_test("NPS_dognuts.R")
 
+
+
+devtools::test()
+attachment::att_amend_desc()
+devtools::check()

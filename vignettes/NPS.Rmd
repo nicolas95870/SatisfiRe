@@ -1,0 +1,44 @@
+---
+title: "NPS"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{NPS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SatisfiRe)
+```
+
+
+## La Fonction noAnswer 
+Permet de créer le niveau des facteurs
+  Input : vector numeric
+  Ouput : vector factor
+
+```{r}
+# Fonction qui permet de faire exister les modalités sans répondants.
+
+table(addNoAnswer(c(1,2)))
+```
+
+## La Fonction NPS
+
+
+Permet de calculer le score de recommendation.
+  input : vecteur numérique
+  output : score entre - 100 et 100 (NA si vide)
+```{r}
+
+NPS(c(1,2,3,4,10))
+
+```
+

@@ -1,5 +1,5 @@
 Package: SatisfiRe
-Title: What the Package Does (One Line, Title Case)
+Title: SatisfiRe Help You to Analyse Data From Consumers Surver
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "First",
@@ -8,9 +8,17 @@ Authors@R:
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: AGPL (>= 3)
+Imports: 
+    assertthat
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Config/testthat/edition: 3

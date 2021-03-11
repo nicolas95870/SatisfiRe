@@ -1,3 +1,5 @@
 ^SatisfiRe\.Rproj$
 ^\.Rproj\.user$
 ^dev_history\.R$
+^LICENSE\.md$
+^\.gitlab-ci\.yml$

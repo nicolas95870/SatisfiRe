@@ -40,21 +40,14 @@ NPS(c(1,10,2,3,5,2))
 #> [1] -66.67
 ```
 
-## Display NPS
+## Display NPS Dognuts
 
 ``` r
 NPS_Dognuts(c(1,2,10,4,3,6,7,8))
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/master/examples>.
+## Display NPS Evolution
 
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+``` r
+NPS_evolution_plot(c(1,10),c("01/01/2020","01/02/2020"),"mois")
+```

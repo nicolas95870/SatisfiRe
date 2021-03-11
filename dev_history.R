@@ -56,6 +56,12 @@ usethis::use_vignette("NPS_evolution")
 usethis::use_r("NPS_evolution.R")
 usethis::use_test("NPS_evolution.R")
 
+
+
+usethis::use_data_raw("my_dataset")
+usethis::use_r("doc_my_dataset.R")
+
 devtools::test()
 attachment::att_amend_desc()
 devtools::check()
+

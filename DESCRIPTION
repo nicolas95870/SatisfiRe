@@ -9,6 +9,8 @@ Authors@R:
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
 License: AGPL (>= 3)
+Depends: 
+    R (>= 2.10)
 Imports: 
     assertthat,
     dplyr,

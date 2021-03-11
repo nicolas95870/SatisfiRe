@@ -30,3 +30,12 @@ devtools::check()
 
 
 usethis::use_github_action_check_standard()
+
+
+covr::package_coverage()
+usethis::use_coverage()
+
+usethis::use_github_action("test-coverage")
+usethis::use_github_action("pkgdown")
+roxygen2::roxygenise()
+usethis::use_readme_rmd()

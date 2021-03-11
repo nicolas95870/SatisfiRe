@@ -1,0 +1,29 @@
+---
+title: "NPS_evolution"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{NPS_evolution}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SatisfiRe)
+```
+
+
+
+```{r, eval=FALSE}
+
+
+
+NPS_evolution_plot(c(1,10,3,4,10),c("01/01/2020","01/01/2020","01/01/2020","01/02/2020","01/02/2020"),"mois")
+```
+

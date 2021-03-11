@@ -3,5 +3,6 @@
 export("%>%")
 export(NPS)
 export(NPS_Dognuts)
+export(NPS_evolution_plot)
 export(addNoAnswer)
 importFrom(magrittr,"%>%")

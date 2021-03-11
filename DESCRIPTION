@@ -11,6 +11,8 @@ Description: What the package does (one paragraph).
 License: AGPL (>= 3)
 Imports: 
     assertthat,
+    dplyr,
+    lubridate,
     magrittr,
     plotly
 Suggests: 

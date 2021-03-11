@@ -56,6 +56,9 @@
 <li>
       <a href="articles/NPS.html">NPS</a>
     </li>
+    <li>
+      <a href="articles/NPS_dognuts.html">NPS_dognuts</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -76,7 +79,7 @@
 <a href="#satisfire" class="anchor"></a>SatisfiRe</h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of SatisfiRe is to …</p>
+<p>The goal of SatisfiRe is to analyse data from consumers survey</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -95,17 +98,23 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">SatisfiRe</span><span class="op">)</span>
 <span class="co">## basic example code</span></code></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
+</div>
+<div id="compute-nps" class="section level2">
+<h2 class="hasAnchor">
+<a href="#compute-nps" class="anchor"></a>Compute NPS</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span>
-<span class="co">#&gt;      speed           dist       </span>
-<span class="co">#&gt;  Min.   : 4.0   Min.   :  2.00  </span>
-<span class="co">#&gt;  1st Qu.:12.0   1st Qu.: 26.00  </span>
-<span class="co">#&gt;  Median :15.0   Median : 36.00  </span>
-<span class="co">#&gt;  Mean   :15.4   Mean   : 42.98  </span>
-<span class="co">#&gt;  3rd Qu.:19.0   3rd Qu.: 56.00  </span>
-<span class="co">#&gt;  Max.   :25.0   Max.   :120.00</span></code></pre></div>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date. <code>devtools::build_readme()</code> is handy for this. You could also use GitHub Actions to re-render <code>README.Rmd</code> every time you push. An example workflow can be found here: <a href="https://github.com/r-lib/actions/tree/master/examples" class="uri">https://github.com/r-lib/actions/tree/master/examples</a>.</p>
+<code class="sourceCode R"><span class="fu"><a href="reference/NPS.html">NPS</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">10</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; [1] -66.67</span></code></pre></div>
+</div>
+<div id="display-nps" class="section level2">
+<h2 class="hasAnchor">
+<a href="#display-nps" class="anchor"></a>Display NPS</h2>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/NPS_Dognuts.html">NPS_Dognuts</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">10</span>,<span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">6</span>,<span class="fl">7</span>,<span class="fl">8</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.</span></code></pre></div>
+<div id="htmlwidget-f6c827bd7937d538717f" style="width:100%;height:480px;" class="plotly html-widget">
+</div>
+<script type="application/json" data-for="htmlwidget-f6c827bd7937d538717f">{"x":{"visdat":{"27ab465f8451":["function () ","plotlyVisDat"]},"cur_data":"27ab465f8451","attrs":{"27ab465f8451":{"labels":{},"values":{},"marker":{"colors":["#4e9c34","#fbb829","#bd3131"]},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie","hole":0.6,"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Repartition du NPS","showlegend":false,"xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"annotations":[{"text":-50,"x":0.5,"y":0.5,"xref":"paper","yref":"paper","showarrow":false,"font":{"color":"black","family":"sans serif","size":30}},{"text":-50,"x":0.5,"y":0.5,"xref":"paper","yref":"paper","showarrow":false,"font":{"color":"black","family":"sans serif","size":30}},{"text":-50,"x":0.5,"y":0.5,"xref":"paper","yref":"paper","showarrow":false,"font":{"color":"black","family":"sans serif","size":30}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false},"data":[{"labels":["promoteurs","neutres","detracteurs"],"values":[1,2,5],"marker":{"color":"rgba(31,119,180,1)","colors":["#4e9c34","#fbb829","#bd3131"],"line":{"color":"rgba(255,255,255,1)"}},"type":"pie","hole":0.6,"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date. <code>devtools::build_readme()</code> is handy for this. You could also use GitHub Actions to re-render <code>README.Rmd</code> every time you push. An example workflow can be found here: <a href="https://github.com/r-lib/actions/tree/master/examples" class="uri">https://github.com/r-lib/actions/tree/master/examples</a>.</p>
 <p>You can also embed plots, for example:</p>
 <p><img src="reference/figures/README-pressure-1.png" width="100%"></p>
 <p>In that case, don’t forget to commit and push the resulting figure files, so they display on GitHub and CRAN.</p>

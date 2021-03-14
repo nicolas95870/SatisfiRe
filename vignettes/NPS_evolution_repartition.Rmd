@@ -1,0 +1,35 @@
+---
+title: "NPS_evolution_repartition"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{NPS_evolution_repartition}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SatisfiRe)
+```
+
+## NPS_evolution_repartition
+
+La fonction produit un graphique de type barplot en fonction du temps (jours, mois, annee)
+  * Input   :reco
+            :date
+            :unite
+  * Output  : Plotly Object
+  
+```{r eval=FALSE}
+
+NPS_evolution_repartition(my_dataset$reco,my_dataset$date,"mois")
+
+```
+  
+  

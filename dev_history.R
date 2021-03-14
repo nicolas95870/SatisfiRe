@@ -58,6 +58,7 @@ usethis::use_test("NPS_evolution.R")
 
 usethis::use_vignette("NPS_evolution_repartition")
 usethis::use_r("NPS_evolution_repartition.R")
+usethis::use_test("NPS_evolution_repartition.R")
 
 
 

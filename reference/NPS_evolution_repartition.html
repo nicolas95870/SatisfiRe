@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Generate a dognuts about recommendation score — NPS_Dognuts • SatisfiRe</title>
+<title>Evolution de la repartition du NPS — NPS_evolution_repartition • SatisfiRe</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Generate a dognuts about recommendation score — NPS_Dognuts" />
-<meta property="og:description" content="Generate a dognuts about recommendation score" />
+<meta property="og:title" content="Evolution de la repartition du NPS — NPS_evolution_repartition" />
+<meta property="og:description" content="Evolution de la repartition du NPS" />
 
 
 
@@ -124,16 +124,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Generate a dognuts about recommendation score</h1>
+    <h1>Evolution de la repartition du NPS</h1>
     
-    <div class="hidden name"><code>NPS_Dognuts.Rd</code></div>
+    <div class="hidden name"><code>NPS_evolution_repartition.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Generate a dognuts about recommendation score</p>
+    <p>Evolution de la repartition du NPS</p>
     </div>
 
-    <pre class="usage"><span class='fu'>NPS_Dognuts</span><span class='op'>(</span><span class='va'>reco</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>NPS_evolution_repartition</span><span class='op'>(</span><span class='va'>reco</span>, <span class='va'>date</span>, <span class='va'>unite</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,14 +142,22 @@
       <th>reco</th>
       <td><p>vector</p></td>
     </tr>
+    <tr>
+      <th>date</th>
+      <td><p>vector (dmy)</p></td>
+    </tr>
+    <tr>
+      <th>unite</th>
+      <td><p>(mois,annee,jours)</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>plotly figure</p>
+    <p>plotly object</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>NPS_Dognuts</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>10</span>,<span class='fl'>4</span>,<span class='fl'>3</span>,<span class='fl'>6</span>,<span class='fl'>7</span>,<span class='fl'>8</span><span class='op'>)</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='fu'>NPS_evolution_repartition</span><span class='op'>(</span><span class='va'>my_dataset</span><span class='op'>$</span><span class='va'>reco</span>,<span class='va'>my_dataset</span><span class='op'>$</span><span class='va'>date</span>,<span class='st'>"mois"</span><span class='op'>)</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

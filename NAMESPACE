@@ -3,6 +3,7 @@
 export("%>%")
 export(NPS)
 export(NPS_Dognuts)
+export(NPS_decompose)
 export(NPS_evolution_plot)
 export(NPS_evolution_repartition)
 export(addNoAnswer)

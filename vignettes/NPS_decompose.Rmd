@@ -1,0 +1,44 @@
+---
+title: "NPS_decompose"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{NPS_decompose}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SatisfiRe)
+```
+
+## La fonction NPS decompose
+
+génére un tableau sur la proportion de détracteurs, neutres, promoteurs à partir du score de recommendation.
+* Input : reco
+  Output :deux data.frame contenant fréquence et proportion.
+  
+```{r}
+
+NPS_decompose <- function(reco){
+  reco = as.numeric(reco)
+  detracteurs = sum(reco <=6, na.rm =T)
+  neutres = sum(reco ==7 | reco==8, na.rm = T) 
+  promoteurs = sum(reco >=9, na.rm = T)
+  reco = as.data.frame(rbind(promoteurs,neutres,detracteurs))
+  reco_prop = round(as.data.frame(prop.table((reco))*100),1)
+  recod = as.data.frame(reco)
+  df = cbind(reco_prop,recod)
+  colnames(df) = c("frequence", "proportion")
+  return(df)
+}
+
+NPS_decompose(my_dataset$reco)
+```
+  

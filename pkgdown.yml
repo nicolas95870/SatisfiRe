@@ -3,8 +3,9 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   NPS: NPS.html
+  NPS_decompose: NPS_decompose.html
   NPS_dognuts: NPS_dognuts.html
   NPS_evolution: NPS_evolution.html
   NPS_evolution_repartition: NPS_evolution_repartition.html
-last_built: 2021-03-14T10:24Z
+last_built: 2021-03-15T08:25Z
 

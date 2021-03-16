@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of SatisfiRe is to analyse data from consumers survey
+The goal of SatisfiRe is to analyze data from consumers survey
 
 ## Installation
 
@@ -50,4 +50,10 @@ NPS_Dognuts(c(1,2,10,4,3,6,7,8))
 
 ``` r
 NPS_evolution_plot(c(1,10),c("01/01/2020","01/02/2020"),"mois")
+```
+
+## Display Evolution NPS by category
+
+``` r
+NPS_evolution_repartition(my_dataset$reco,my_dataset$date,"mois")
 ```

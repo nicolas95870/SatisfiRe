@@ -63,7 +63,9 @@ usethis::use_vignette("NPS_decompose")
 usethis::use_r("NPS_decompose.R")
 usethis::use_test("NPS_decompose.R")
 
-
+usethis::use_vignette("NPS_hbarplot")
+usethis::use_r("NPS_hbarplot.R")
+usethis::use_test("NPS_hbarplot.R")
 
 usethis::use_data_raw("my_dataset")
 usethis::use_r("doc_my_dataset.R")

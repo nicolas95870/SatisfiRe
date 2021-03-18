@@ -24,8 +24,10 @@ library(SatisfiRe)
 Fonction qui permet plusieurs barplot horizontale représentant la propotion de promoteurs, neutres, détracteurs.
 
 ```{r}
-NPS_hbarplot<- function(dataset,dr,reco){
 
+dataset <- my_dataset
+dataset$dc  <- dataset$dr
+NPS_hbarplot<- function(dataset,dr,reco){
 grouped_data <- dplyr::group_by({{dataset}}, {{dr}})
 
 summarize_data <-
@@ -38,8 +40,8 @@ summarize_data <-
   )
 
 contigence = as.data.frame(summarize_data)
-row.names(contigence) = contigence$dr
-contigence$dr <- NULL
+row.names(contigence) = contigence[[1]]
+contigence[[1]] <- NULL
 contigence = as.data.frame(contigence)
 
 
@@ -107,6 +109,8 @@ return(fig)
 
 }
 
+
+NPS_hbarplot(dataset,date,reco)
 ```
  
  

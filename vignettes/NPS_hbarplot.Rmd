@@ -23,94 +23,9 @@ library(SatisfiRe)
 
 Fonction qui permet plusieurs barplot horizontale représentant la propotion de promoteurs, neutres, détracteurs.
 
-```{r}
+```{r eval=FALSE}
 
-dataset <- my_dataset
-dataset$dc  <- dataset$dr
-NPS_hbarplot<- function(dataset,dr,reco){
-grouped_data <- dplyr::group_by({{dataset}}, {{dr}})
-
-summarize_data <-
-  dplyr::summarize(
-    grouped_data,
-    promoteurs = sum({{reco}} >= 9),
-    neutres = sum({{reco}} == 8 |
-                    {{reco}} == 7),
-    detracteurs = sum({{reco}} <= 6)
-  )
-
-contigence = as.data.frame(summarize_data)
-row.names(contigence) = contigence[[1]]
-contigence[[1]] <- NULL
-contigence = as.data.frame(contigence)
-
-
-A = contigence
-B = A
-A = round(A / rowSums(A), 2)
-
-
-
-
-
-#A et B sont des dataframe ou chaque row.names est soit promoteur, neutre, détracteurs , chaque colonnes est un périmetres
-# A est une propotion, B est une contingence
-
-
-fig <-
-  plotly::plot_ly(
-    A,
-    y = row.names(A),
-    x = A$promoteurs ,
-    text = A$promoteurs,
-    textposition = 'auto' ,
-    type = 'bar',
-    orientation = 'h',
-    name = 'Promoteurs',
-    hovertext  = B$promoteurs,
-    marker = list(color = "#4e9c34",
-                  line = list(color = "#4e9c34",
-                              width = 3))
-  )
-
-
-fig <-
-  plotly::add_trace(
-    fig,
-    x = A$neutres,
-    name = 'Neutres',
-    text = A$neutres,
-    textposition = 'auto',
-    hovertext  = B$neutres,
-    marker = list(color = "#fbb829",
-                  line = list(color = "#fbb829",
-                              width = 3))
-  )
-
-fig <-
-  plotly::add_trace(
-    fig,
-    x = A$detracteurs,
-    name = 'Détracteurs',
-    text = A$detracteurs,
-    textposition = 'auto',
-    hovertext  = B$detracteurs,
-    marker = list(color = '#bd3131',
-                  line = list(color = '#bd3131',
-                              width = 3))
-  )
-
-fig <- fig %>% plotly::layout(
-  barmode = 'stack',
-  xaxis = list(title = ""),
-  yaxis = list(title = "")
-)
-return(fig)
-
-}
-
-
-NPS_hbarplot(dataset,date,reco)
+NPS_hbarplot(dataset,dr,reco)
 ```
  
  

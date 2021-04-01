@@ -1,0 +1,88 @@
+---
+title: "Sat_dognuts"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Sat_dognuts}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SatisfiRe)
+```
+
+
+## La fonction Sat_dognuts
+
+Permet de génerer un dognuts représentan la répatition des Très satisfait, Satisfait, Pas satisfait, Pas du tout Satisfait.
+Input : attribut (vecteur) ; contient les réponses de satisfation
+        nb_level (numeric) : nombtre de choix possible (5 ou 10)
+        titre (character) : Titre du dognuts
+Output : Plotly objet
+
+```{r}
+Sat_Dognuts <- function(attribut,nb_level,titre){
+  assertthat::assert_that(is.vector(attribut))
+  assertthat::assert_that(is.numeric(nb_level))
+  assertthat::assert_that(is.character(titre))
+
+  reco = attribut
+  reco = as.numeric(reco)
+  if(nb_level> 9) {
+    `Pas du tout satisfait` = sum(reco <=4, na.rm =T)
+    `Pas satisfait` = sum(reco ==6 | reco==5, na.rm = T) 
+    `Satisfait` = sum(reco ==7 | reco==8, na.rm = T) 
+    `Très satisfait` = sum(reco >=9, na.rm = T)
+    reco = as.data.frame(rbind(`Pas du tout satisfait`,`Pas satisfait`,`Satisfait` ,`Très satisfait`))
+
+    
+  
+
+  }
+  
+  if(nb_level <= 6) {
+    `Pas du tout satisfait` = sum(reco ==1, na.rm =T)
+    `Pas satisfait` = sum(reco ==2, na.rm = T) 
+    `Satisfait` = sum(reco ==3, na.rm = T) 
+    `Très satisfait` = sum(reco >=4 , na.rm = T)
+    
+    reco = as.data.frame(rbind(`Pas du tout satisfait`,`Pas satisfait`,`Satisfait` ,`Très satisfait`))
+
+
+  }
+  
+  reco_prop = round(as.data.frame(prop.table((reco))*100),1)
+  reco = as.data.frame(reco)
+  
+  recod = cbind(rownames(reco),reco)
+  rownames(recod) = NULL
+  colnames(recod) = c("reco","count")
+  
+  fig <- recod %>% plotly::plot_ly(labels = ~reco, values = ~count,  marker = list(colors = c("#FF0921",'#FF8040', '#92d050','#00b050')))
+  fig <- fig %>% plotly::add_pie(hole = 0.6)
+  fig <- fig %>% plotly::layout(title = titre,  showlegend = F,
+                        xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+                        yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+  fig <- fig %>%plotly::add_annotations(reco_prop["Très satisfait",] -reco_prop["Pas du tout satisfait",],
+                                x= 0.5,
+                                y= 0.5,
+                                xref = "paper",
+                                yref = "paper",
+                                text = ,
+                                showarrow = F,font = list(color = "black", 
+                                                          family="sans serif", 
+                                                          size = 30))
+  
+  return(fig)
+}
+
+
+```
+

@@ -71,6 +71,10 @@ usethis::use_data_raw("my_dataset")
 usethis::use_r("doc_my_dataset.R")
 
 
+usethis::use_vignette("Sat_dognuts")
+usethis::use_r("Sat_dognuts.R")
+usethis::use_test("Sat_dognuts.R")
+
 devtools::test()
 attachment::att_amend_desc()
 devtools::check()

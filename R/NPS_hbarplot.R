@@ -1,4 +1,14 @@
-
+#' NPS_hbarplot
+#'
+#' @param dataset data.frame
+#' @param dr character
+#' @param reco numeric
+#'
+#' @return plotlyobject
+#' @export
+#'
+#' @examples
+#' NPS_hbarplot(my_dataset,dr, reco)
 NPS_hbarplot <- function(dataset, dr, reco) {
   assertthat::assert_that(is.data.frame(dataset))
   grouped_data <- dplyr::group_by({
@@ -65,11 +75,9 @@ NPS_hbarplot <- function(dataset, dr, reco) {
       orientation = 'h',
       name = 'Promoteurs',
       hovertext  = B$promoteurs,
-      marker = list(
-        color = "#4e9c34",
-        line = list(color = "#4e9c34",
-                    width = 3)
-      )
+      marker = list(color = "#4e9c34",
+                    line = list(color = "#4e9c34",
+                                width = 3))
     )
 
 
@@ -81,11 +89,9 @@ NPS_hbarplot <- function(dataset, dr, reco) {
       text = A$neutres,
       textposition = 'auto',
       hovertext  = B$neutres,
-      marker = list(
-        color = "#fbb829",
-        line = list(color = "#fbb829",
-                    width = 3)
-      )
+      marker = list(color = "#fbb829",
+                    line = list(color = "#fbb829",
+                                width = 3))
     )
 
   fig <-
@@ -96,11 +102,9 @@ NPS_hbarplot <- function(dataset, dr, reco) {
       text = A$detracteurs,
       textposition = 'auto',
       hovertext  = B$detracteurs,
-      marker = list(
-        color = '#bd3131',
-        line = list(color = '#bd3131',
-                    width = 3)
-      )
+      marker = list(color = '#bd3131',
+                    line = list(color = '#bd3131',
+                                width = 3))
     )
 
   fig <- fig %>% plotly::layout(

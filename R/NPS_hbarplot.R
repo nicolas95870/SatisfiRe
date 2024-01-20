@@ -28,7 +28,7 @@ NPS_hbarplot <- function(dataset, dr, reco) {
         {
           reco
         }
-      } >= 9),
+      } >= 9, na.rm  = T),
       neutres = sum({
         {
           reco
@@ -38,12 +38,12 @@ NPS_hbarplot <- function(dataset, dr, reco) {
           {
             reco
           }
-        } == 7),
+        } == 7, na.rm  = T),
       detracteurs = sum({
         {
           reco
         }
-      } <= 6)
+      } <= 6, na.rm  = T)
     )
 
   contigence = as.data.frame(summarize_data)
